@@ -662,10 +662,10 @@ footer{
   position:absolute;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(760px 520px at 88% 100%,rgba(255,46,0,.17),rgba(255,46,0,0) 70%);
 }
-.foot-inner{position:relative;z-index:1}
+.foot-inner{position:relative;z-index:1;width:min(100%,1100px);margin-inline:auto}
 
 /* columns */
-.foot-cols{display:grid;grid-template-columns:2.1fr 1fr .95fr 1.35fr;gap:52px 40px;padding-bottom:7vh}
+.foot-cols{display:grid;grid-template-columns:1.9fr 1fr .85fr 1.5fr;gap:52px 44px;padding-bottom:7vh}
 .foot-col h5{
   font-weight:900;text-transform:uppercase;letter-spacing:-.02em;
   font-size:15px;line-height:1.2;color:var(--paper);margin-bottom:22px;
@@ -683,7 +683,7 @@ footer{
 
 /* brand column */
 .foot-brand .foot-nav{margin-bottom:18px}
-.foot-blurb{color:var(--paper-mute);font-size:14px;line-height:1.55;max-width:46ch}
+.foot-blurb{color:var(--paper-mute);font-size:14px;line-height:1.55;max-width:42ch}
 
 /* connect block */
 .foot-connect{margin-top:34px}
