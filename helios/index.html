@@ -8,6 +8,14 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="ico-google" viewBox="0 0 48 48">
+    <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+    <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+    <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+    <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+    </symbol>
+  </svg>
 
 <div id="preloader"><span class="pre-logo">HELIOS ENERGY</span><span id="preCount">000</span></div>
 <div id="cDot"></div><div id="cRing"></div>
@@ -72,14 +80,7 @@
         <p class="hero-lead">Say goodbye to noisy generators, rising fuel costs, and unstable grid electricity. We design and install custom solar panels, inverters, and lithium battery systems tailored to your exact power needs and budget.</p>
         <div class="hero-badges-dark" data-reveal>
           <div class="badge-dark">
-            <span class="ico">
-              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-                <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
-                <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
-                <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
-                <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
-              </svg>
-            </span>
+            <span class="ico"><svg class="gmark" aria-hidden="true" focusable="false"><use href="#ico-google"/></svg></span>
             <span><b>4.9 <span class="stars">★★★★★</span></b><br>Based on 118 Reviews</span>
           </div>
           <div class="badge-dark">
@@ -226,12 +227,102 @@
     </div>
     <div class="rev-viewport">
       <div class="rev-track" id="revTrack">
-        <div class="rev-card"><span class="stars">★★★★★</span><p>"Generator has been silent for eleven months. The app shows everything — we've basically forgotten we ever had a bill."</p><div class="who"><b>MRS. A. BAKARE</b><span>IKOYI — 8.4 kW HYBRID</span></div></div>
-        <div class="rev-card"><span class="stars">★★★★★</span><p>"Survey to switch-on in nineteen days. The crew were in and out in two days, scaffolding gone by Friday."</p><div class="who"><b>T. ADEYEMI</b><span>LEKKI — 6.1 kW</span></div></div>
-        <div class="rev-card"><span class="stars">★★★★★</span><p>"They modelled our diesel spend and cut it by 87%. The numbers came in exactly as quoted. Rare."</p><div class="who"><b>OPS DIRECTOR</b><span>V.I. LOGISTICS — 84 kW C&amp;I</span></div></div>
-        <div class="rev-card"><span class="stars">★★★★★</span><p>"Third system in the extended family. They treat every roof like it's their own."</p><div class="who"><b>C. OKONKWO</b><span>EPE — 12 kW GROUND-MOUNT</span></div></div>
-        <div class="rev-card"><span class="stars">★★★★★</span><p>"The 0% finance made it painless, and our payback is tracking ahead of their model."</p><div class="who"><b>DR. F. BALOGUN</b><span>IKEJA — 5.2 kW</span></div></div>
-        <div class="rev-card"><span class="stars">★★★★★</span><p>"One panel fault in three years — fixed within 48 hours under warranty, no arguments."</p><div class="who"><b>S. MOHAMMED</b><span>ABUJA — 7.7 kW</span></div></div>
+        <article class="rev-card">
+          <div class="rev-top">
+            <svg class="gmark" aria-hidden="true" focusable="false"><use href="#ico-google"/></svg>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="sr-only">Rated 5 out of 5 on Google</span>
+          </div>
+          <div class="rev-scroll">
+            <div class="rev-body" tabindex="0" role="group" aria-label="Review by Mrs. A. Bakare — scrollable">
+              <p>"We had been running two generators for years and the noise and the diesel bills were wearing us down. The survey was thorough — they spent a full afternoon measuring what we actually consume instead of guessing from the size of the roof. Installation took three days and the team cleaned up completely every evening before they left. Eleven months on, the generator has not come on once. The app shows exactly what we are producing and storing, and we have honestly forgotten what a bill looks like. My husband now checks the dashboard more often than the football scores."</p>
+            </div>
+          </div>
+          <div class="who">
+            <img class="rev-face" src="img/rev-1.jpg" alt="" width="44" height="44" loading="lazy" decoding="async">
+            <span class="who-txt"><b>MRS. A. BAKARE</b><span>IKOYI — 8.4 kW HYBRID</span></span>
+          </div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-top">
+            <svg class="gmark" aria-hidden="true" focusable="false"><use href="#ico-google"/></svg>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="sr-only">Rated 5 out of 5 on Google</span>
+          </div>
+          <div class="rev-scroll">
+            <div class="rev-body" tabindex="0" role="group" aria-label="Review by T. Adeyemi — scrollable">
+              <p>"From first survey to switch-on was nineteen days, which I did not think was possible in Lagos. They gave me a written schedule at the start and hit every single date on it. The crew arrived at seven each morning, worked two full days on the roof, and the scaffolding was gone by Friday afternoon. What impressed me most was the handover. They sat with me for an hour explaining the inverter settings, the battery reserve level, and exactly what happens if the grid drops while the system is mid-charge. No jargon and no rushing."</p>
+            </div>
+          </div>
+          <div class="who">
+            <img class="rev-face" src="img/rev-2.jpg" alt="" width="44" height="44" loading="lazy" decoding="async">
+            <span class="who-txt"><b>T. ADEYEMI</b><span>LEKKI — 6.1 kW</span></span>
+          </div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-top">
+            <svg class="gmark" aria-hidden="true" focusable="false"><use href="#ico-google"/></svg>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="sr-only">Rated 5 out of 5 on Google</span>
+          </div>
+          <div class="rev-scroll">
+            <div class="rev-body" tabindex="0" role="group" aria-label="Review by Ops Director — scrollable">
+              <p>"We approached three companies and this was the only one that asked to see twelve months of diesel invoices before putting a number on paper. They built a consumption model, walked us through every assumption in it, and projected an 87% reduction. Nine months into operation we are tracking at 86.4%, close enough that I have stopped checking weekly. The system has ridden out two grid failures during peak warehouse hours without a flicker. For a commercial operation the reporting alone justified the spend — I pull runtime and yield per month straight into the board pack."</p>
+            </div>
+          </div>
+          <div class="who">
+            <img class="rev-face" src="img/rev-3.jpg" alt="" width="44" height="44" loading="lazy" decoding="async">
+            <span class="who-txt"><b>OPS DIRECTOR</b><span>V.I. LOGISTICS — 84 kW C&amp;I</span></span>
+          </div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-top">
+            <svg class="gmark" aria-hidden="true" focusable="false"><use href="#ico-google"/></svg>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="sr-only">Rated 5 out of 5 on Google</span>
+          </div>
+          <div class="rev-scroll">
+            <div class="rev-body" tabindex="0" role="group" aria-label="Review by C. Okonkwo — scrollable">
+              <p>"This is the third system they have installed across our extended family, which should tell you most of what you need to know. The ground-mount at Epe was not straightforward. The soil needed different anchoring from what was originally specified, and rather than cut a corner and hope, they came back with a revised foundation design and absorbed the cost themselves. That is rare here, and it is the reason I keep recommending them. They treat every roof and every plot as if it were their own. My brother in Ibadan is next on the list."</p>
+            </div>
+          </div>
+          <div class="who">
+            <img class="rev-face" src="img/rev-4.jpg" alt="" width="44" height="44" loading="lazy" decoding="async">
+            <span class="who-txt"><b>C. OKONKWO</b><span>EPE — 12 kW GROUND-MOUNT</span></span>
+          </div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-top">
+            <svg class="gmark" aria-hidden="true" focusable="false"><use href="#ico-google"/></svg>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="sr-only">Rated 5 out of 5 on Google</span>
+          </div>
+          <div class="rev-scroll">
+            <div class="rev-body" tabindex="0" role="group" aria-label="Review by Dr. F. Balogun — scrollable">
+              <p>"The interest-free finance is what made this possible for us. Paying monthly rather than in one large outlay meant we could go ahead nearly two years earlier than we had planned. Their payback model said forty-one months and we are currently running a little ahead of that. The clinic runs on it through the day and the house takes over at night. In three years we have had exactly one panel fault — reported on a Tuesday, replaced under warranty by Thursday, with no argument and no invoice at the end of it."</p>
+            </div>
+          </div>
+          <div class="who">
+            <img class="rev-face" src="img/rev-5.jpg" alt="" width="44" height="44" loading="lazy" decoding="async">
+            <span class="who-txt"><b>DR. F. BALOGUN</b><span>IKEJA — 5.2 kW</span></span>
+          </div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-top">
+            <svg class="gmark" aria-hidden="true" focusable="false"><use href="#ico-google"/></svg>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="sr-only">Rated 5 out of 5 on Google</span>
+          </div>
+          <div class="rev-scroll">
+            <div class="rev-body" tabindex="0" role="group" aria-label="Review by S. Mohammed — scrollable">
+              <p>"I was sceptical going in, because I had been burned by an installer in Abuja who effectively disappeared the week after commissioning. This team were different from the very first call. Everything was documented — the load assessment, the cable runs, the commissioning certificate, all of it handed over in a folder. They registered the warranty on my behalf rather than leaving it as my problem to chase. When I rang eight months later about an app login issue, a person picked up and talked me through it in four minutes."</p>
+            </div>
+          </div>
+          <div class="who">
+            <img class="rev-face" src="img/rev-6.jpg" alt="" width="44" height="44" loading="lazy" decoding="async">
+            <span class="who-txt"><b>S. MOHAMMED</b><span>ABUJA — 7.7 kW</span></span>
+          </div>
+        </article>
       </div>
     </div>
     <div class="rev-nav">

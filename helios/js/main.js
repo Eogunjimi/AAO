@@ -181,7 +181,30 @@
     $('#revNext').addEventListener('click', function(){ idx = Math.min(maxIdx(), idx + 1); layout(); });
     addEventListener('resize', function(){ buildDots(); layout(); });
     buildDots(); layout();
-    setInterval(function(){ idx = idx >= maxIdx() ? 0 : idx + 1; layout(); }, 6000);
+    /* Autoplay pauses while the reader is in the carousel. The review
+       bodies scroll, so sliding the track out from under someone who is
+       part-way through one would be hostile. Also honours reduced-motion
+       and stops entirely when the tab is hidden. */
+    var timer = null;
+    var reduce = matchMedia('(prefers-reduced-motion:reduce)');
+    var section = revTrack.closest ? revTrack.closest('.reviews') : null;
+    function play(){
+      if (timer || reduce.matches || document.hidden) return;
+      timer = setInterval(function(){ idx = idx >= maxIdx() ? 0 : idx + 1; layout(); }, 6000);
+    }
+    function pause(){ if (timer){ clearInterval(timer); timer = null; } }
+    if (section){
+      ['mouseenter','focusin','touchstart'].forEach(function(ev){
+        section.addEventListener(ev, pause, {passive:true});
+      });
+      ['mouseleave','focusout'].forEach(function(ev){
+        section.addEventListener(ev, play);
+      });
+    }
+    document.addEventListener('visibilitychange', function(){
+      document.hidden ? pause() : play();
+    });
+    play();
   }
 
   /* ---------- accordions (services + faq) ---------- */
