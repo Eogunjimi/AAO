@@ -1319,3 +1319,9 @@ body.menu-lock{overflow:hidden}
 @media (max-width:960px){
   .finance .right{max-width:none}
 }
+
+/* The step captions are longer than the ones this section was built for,
+   and a 20ch cap inside a 221px step left the first step on three lines
+   while the rest sat on two, and hyphenated "long-term". A slightly
+   wider measure evens the row without reaching the step's own edge. */
+.proc-step p{max-width:23ch}
