@@ -1300,3 +1300,22 @@ body.menu-lock{overflow:hidden}
   margin-top:16px;font-family:var(--mono);font-size:11px;
   letter-spacing:.12em;color:var(--paper-mute);
 }
+
+/* ---- finance: image removed, single centred column ----
+   The rest of the site is deliberately full-bleed, but centred prose
+   spanning the 4vw gutters would run past 1300px and be unreadable, so
+   this one section takes a max-width and centres inside it.
+
+   The benefit rows keep their icon-left layout. Centring a row whose
+   icon sits beside its text breaks the link between the two, and the
+   rules above and below each row need a consistent left edge to read
+   as a list rather than as three stray blocks. */
+.finance{grid-template-columns:1fr;justify-items:center;text-align:center}
+.finance .right{grid-column:1/-1;padding-left:0;max-width:880px;width:100%}
+.finance h2{max-width:22ch;margin-left:auto;margin-right:auto}
+.finance .lead{max-width:62ch;margin-left:auto;margin-right:auto}
+.finance .fin-row{text-align:left}
+.finance .fin-row p{max-width:none}
+@media (max-width:960px){
+  .finance .right{max-width:none}
+}
