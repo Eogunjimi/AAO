@@ -316,7 +316,7 @@ body.loaded .hero--dark .display .line:nth-child(4)>span{animation-delay:.24s}
 .hero--dark .badge-dark .ico.fb{font-size:15px}
 .hero--dark .badge-dark b{font-size:11px;letter-spacing:.02em;color:var(--ink);font-weight:700}
 .hero--dark .badge-dark .stars{color:var(--lime);letter-spacing:1px;font-size:11px}
-.hero--dark .badge-dark span:last-child{color:var(--mute)}
+.hero--dark .badge-dark > span:last-child{color:var(--mute)}
 .hero--dark .meet-card{
   margin-top:22px;background:rgba(22,22,19,.88);backdrop-filter:blur(8px);
   border:1px solid var(--paper-hair);border-left:3px solid var(--lime);
@@ -1003,3 +1003,21 @@ h1 em,h2 em,h3 em,h4 em,.display em,.statement em,.quick-quote h3 em{
     display:inline;overflow:visible;transform:none;animation:none;
   }
 }
+
+/* ---- review badges: real brand marks + gold stars ---- */
+:root{--gold:#FBBC04}
+
+/* The Google mark sits inside the light disc; the Facebook mark supplies
+   its own blue disc, so that one drops the container's fill and border
+   and bleeds to the full 28px instead of being ringed twice. */
+.hero--dark .badge-dark .ico{padding:0;overflow:hidden}
+.hero--dark .badge-dark .ico svg{width:17px;height:17px;display:block}
+.hero--dark .badge-dark .ico.fb{background:none;border:none}
+.hero--dark .badge-dark .ico.fb svg{width:28px;height:28px}
+
+/* Gold is the conventional rating colour and is what these badges are
+   imitating. It is low-contrast on white by nature, so it stays purely
+   decorative — the accessible rating is the adjacent "4.9" / "5.0" in
+   full-contrast ink, and the label spells the source out in words. */
+.hero--dark .badge-dark .stars,
+.rev-card .stars{color:var(--gold)}
