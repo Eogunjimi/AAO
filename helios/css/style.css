@@ -882,7 +882,7 @@ body{font-size:16px;line-height:1.5;letter-spacing:-.005em}
 /* ---- hero: headline was sized for tight uppercase; sentence case needs less ---- */
 .hero--dark .hero-copy{grid-column:1/9}
 .hero--dark .hero-person-wrap{grid-column:9/13}
-.hero--dark .display{font-size:clamp(1.9rem,3.5vw,3.35rem);line-height:1.06;letter-spacing:-.025em}
+.hero--dark .display{font-size:clamp(1.9rem,3.8vw,3.65rem);line-height:1.06;letter-spacing:-.025em}
 .hero--dark .hero-lead{font-size:16px;margin-top:18px}
 @media (max-width:1100px){.hero--dark .display{font-size:clamp(1.8rem,4.2vw,2.6rem)}}
 @media (max-width:960px){
