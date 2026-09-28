@@ -1281,3 +1281,10 @@ body.menu-lock{overflow:hidden}
 /* Service pages put the section heading in an h2 so the outline runs
    h1 -> h2 without skipping a level; .sys-detail only styled h3. */
 .sys-detail h2{font-weight:700;letter-spacing:-.03em;font-size:clamp(1.6rem,3vw,2.6rem);margin:10px 0 14px}
+
+/* .acc-body-in a was inline-block with a top margin, so it only dropped
+   to its own line when the preceding copy happened to fill the last one.
+   With shorter copy it butted straight against the full stop. Block with
+   fit-content keeps the underline tight to the text and puts it on its
+   own line whatever the copy length. */
+.acc-body-in a{display:block;width:fit-content}
