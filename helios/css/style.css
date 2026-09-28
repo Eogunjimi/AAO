@@ -826,9 +826,9 @@ body{font-size:16px;line-height:1.5;letter-spacing:-.005em}
 .sys-media img,.proj-media img,.article img{border-radius:var(--radius-lg);overflow:hidden}
 .house-clip{clip-path:none}
 
-/* ---- hero: inset rounded stage ---- */
+/* ---- hero: full-bleed stage ---- */
 .hero.hero--dark{
-  margin:14px 4vw 0;border-radius:var(--radius-xl);overflow:hidden;
+  margin:0;border-radius:0;overflow:hidden;
   min-height:72vh;background:var(--forest);
 }
 .hero--dark .hero-inner{min-height:72vh;padding:7vh 4vw 6vh}
