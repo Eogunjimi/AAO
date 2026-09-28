@@ -1288,3 +1288,15 @@ body.menu-lock{overflow:hidden}
    fit-content keeps the underline tight to the text and puts it on its
    own line whatever the copy length. */
 .acc-body-in a{display:block;width:fit-content}
+
+/* Lead paragraph and fine print in the finance section. --paper-soft is
+   the body-copy-on-dark token (7.64:1), so the lead stays readable
+   rather than dropping to the muted tone used for secondary text. */
+.finance .lead{
+  color:var(--paper-soft);font-size:16px;line-height:1.6;
+  max-width:56ch;margin:-14px 0 30px;
+}
+.finance .fine{
+  margin-top:16px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.12em;color:var(--paper-mute);
+}
