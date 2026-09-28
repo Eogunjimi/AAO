@@ -91,9 +91,6 @@ section{position:relative;z-index:2}
 .nav-links a:hover{color:var(--lime)}
 .nav-links a.active{color:var(--ink);border-color:var(--lime)}
 .nav-cta{margin-left:auto;display:flex;align-items:center;gap:18px}
-.nav-phone{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mute)}
-.nav-phone:hover{color:var(--lime)}
-@media (max-width:1080px){.nav-phone{display:none}}
 @media (max-width:960px){.nav-links{display:none}}
 
 /* ---------- buttons ---------- */
@@ -817,7 +814,6 @@ body{font-size:16px;line-height:1.5;letter-spacing:-.005em}
 }
 .nav-links a:hover{background:rgba(19,37,26,.06);color:var(--ink)}
 .nav-links a.active{background:var(--lime);color:var(--ink);border:none}
-.nav-phone{font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:-.005em}
 .wordmark i{color:var(--lime)}
 
 /* ---- surfaces: rounded, soft, borderless ---- */
@@ -901,4 +897,50 @@ body{font-size:16px;line-height:1.5;letter-spacing:-.005em}
 /* ---- serif italic emphasis on every heading, not just the enumerated ones ---- */
 h1 em,h2 em,h3 em,h4 em,.display em,.statement em,.quick-quote h3 em{
   font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.005em;color:inherit;
+}
+
+/* ---- WhatsApp CTA in the nav ----
+   Secondary to the lime quote pill: matched height and pill geometry,
+   hairline outline, glyph inherits currentColor so it stays in the green
+   palette rather than importing WhatsApp brand green. Collapses to a round
+   icon button when the bar gets tight, and survives down to 320px because
+   WhatsApp is the primary contact channel for this market. */
+.nav-wa{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  height:46px;padding:0 20px 0 17px;box-sizing:border-box;
+  font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:-.005em;
+  color:var(--ink);background:transparent;
+  border:1.5px solid var(--hair-strong);border-radius:999px;white-space:nowrap;
+  transition:background .22s,color .22s,border-color .22s;
+}
+.nav-wa .wa-ico{flex:0 0 17px;display:block;transition:transform .22s}
+.nav-wa:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.nav-wa:hover .wa-ico{transform:scale(1.09)}
+.nav-wa:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+/* icon-only once the bar tightens */
+@media (max-width:1180px){
+  .nav-wa{width:46px;padding:0;gap:0}
+  .nav-wa span{display:none}
+}
+@media (max-width:560px){
+  .nav-cta{gap:10px}
+  .nav-wa{width:42px;height:42px}
+}
+
+/* Adding the WhatsApp button crowded the bar on small phones and pushed the
+   quote pill past the edge (clipped silently by overflow-x:clip). Compact
+   both actions so the pair fits from 320px up. */
+@media (max-width:480px){
+  .nav{gap:12px}
+  .wordmark{font-size:16px}
+  .nav-cta{gap:8px}
+  .nav-wa{width:40px;height:40px}
+  .nav-cta .pill{font-size:12px;padding:0 6px 0 14px;height:40px;gap:9px}
+  .nav-cta .pill::after{width:28px;height:28px;flex:0 0 28px;font-size:13px}
+}
+@media (max-width:360px){
+  .wordmark{font-size:14px}
+  .nav-cta .pill{font-size:11.5px;padding:0 5px 0 11px;gap:7px}
+  .nav-cta .pill::after{width:26px;height:26px;flex:0 0 26px}
+  .nav-wa{width:36px;height:36px}
 }
