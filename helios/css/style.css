@@ -1329,3 +1329,11 @@ body.menu-lock{overflow:hidden}
 /* Emphasis inside an answer needs to lift off the muted body tone,
    otherwise bold at --paper-mute reads as noise rather than emphasis. */
 .faq-a strong{color:var(--paper);font-weight:600}
+
+/* Coverage pills are now two labelled groups rather than one flat run,
+   so Lagos districts are not read as separate cities. */
+.cities-group{display:flex;flex-direction:column;gap:24px}
+.cg-label{
+  display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  color:var(--mute);margin-bottom:12px;
+}
