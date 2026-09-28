@@ -991,3 +991,15 @@ h1 em,h2 em,h3 em,h4 em,.display em,.statement em,.quick-quote h3 em{
 .nav-sub a:hover{background:rgba(19,37,26,.06)}
 .nav-sub a.on{background:var(--lime)}
 @media (max-width:1180px){.nav-links{gap:2px}.nav-links a{padding:8px 11px}}
+
+/* The hero headline uses hard-coded .line breaks tuned for desktop. On a
+   narrow column those lines wrap again and orphan single words, so below
+   640px let the whole headline reflow as normal text. The rise animation
+   is transform-based and does not apply to inline boxes, so it is
+   explicitly disabled here to guarantee the text is never left hidden. */
+@media (max-width:640px){
+  .hero--dark .display .line,
+  .hero--dark .display .line>span{
+    display:inline;overflow:visible;transform:none;animation:none;
+  }
+}
