@@ -226,7 +226,15 @@
         if (!isOpen){
           item.classList.add('open');
           body.style.maxHeight = body.scrollHeight + 'px';
-          if (stageImgs[n]) stageImgs[n].classList.add('on');
+          if (stageImgs[n]){
+            stageImgs[n].classList.add('on');
+            /* The caption sits inside the image, so it has to follow the
+               image. It was static, which meant every service showed the
+               same specification line. */
+            var cap = stage.querySelector('.cap');
+            var text = stageImgs[n].getAttribute('data-cap');
+            if (cap && text) cap.textContent = text;
+          }
         }
       });
     });
