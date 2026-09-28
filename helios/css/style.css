@@ -1277,3 +1277,7 @@ body.menu-lock{overflow:hidden}
   .wa-float{width:52px;height:52px;bottom:calc(16px + env(safe-area-inset-bottom,0px))}
   .wa-float svg{width:24px;height:24px}
 }
+
+/* Service pages put the section heading in an h2 so the outline runs
+   h1 -> h2 without skipping a level; .sys-detail only styled h3. */
+.sys-detail h2{font-weight:700;letter-spacing:-.03em;font-size:clamp(1.6rem,3vw,2.6rem);margin:10px 0 14px}
