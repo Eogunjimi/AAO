@@ -1088,3 +1088,157 @@ h1 em,h2 em,h3 em,h4 em,.display em,.statement em,.quick-quote h3 em{
    pill's asymmetric 22px/7px padding is meant for a hug-content button
    and would otherwise push the centred group 7.5px off true. */
 .form-card .pill{justify-content:center;padding-inline:7px}
+
+/* ============================================================
+   MOBILE MENU
+   Below 960px the desktop nav-links are hidden, which previously
+   left no way to reach any page. The burger matches .nav-wa
+   exactly — same circle, same hairline, same currentColor glyph —
+   so the two sit as a matched pair of icon controls.
+
+   The drawer is absolutely positioned inside .nav rather than
+   fixed: .nav carries backdrop-filter, which makes it the
+   containing block for fixed descendants, so position:fixed
+   inside it would resolve against the nav rather than the
+   viewport. The scrim is therefore a sibling AFTER the header,
+   where fixed behaves normally.
+
+   Open/closed uses visibility rather than display so it can
+   transition, and so the drawer's links are genuinely
+   unfocusable while closed.
+   ============================================================ */
+
+.nav-burger{
+  display:none;
+  align-items:center;justify-content:center;
+  width:46px;height:46px;flex:0 0 46px;padding:0;box-sizing:border-box;
+  color:var(--ink);background:transparent;
+  border:1.5px solid var(--hair-strong);border-radius:50%;
+  cursor:pointer;transition:background .22s,color .22s,border-color .22s;
+}
+/* Filled while open, so the close state is deliberate rather than an
+   accident of :hover — which does not exist on touch. */
+.nav-burger:hover,
+.nav.menu-open .nav-burger{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.nav-burger:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+
+.burger-box{display:block;width:18px;height:12px;position:relative}
+.burger-box span{
+  position:absolute;left:0;width:100%;height:1.8px;border-radius:2px;
+  background:currentColor;transition:transform .26s cubic-bezier(.2,.65,.2,1),opacity .18s;
+}
+.burger-box span:nth-child(1){top:0}
+.burger-box span:nth-child(2){top:5.1px}
+.burger-box span:nth-child(3){top:10.2px}
+.nav.menu-open .burger-box span:nth-child(1){transform:translateY(5.1px) rotate(45deg)}
+.nav.menu-open .burger-box span:nth-child(2){opacity:0}
+.nav.menu-open .burger-box span:nth-child(3){transform:translateY(-5.1px) rotate(-45deg)}
+
+.nav-drawer{
+  display:none;
+  position:absolute;top:100%;left:0;right:0;
+  max-height:calc(100dvh - var(--nav-h) - 14px);overflow-y:auto;overscroll-behavior:contain;
+  background:var(--paper);
+  border-bottom:1px solid var(--hair);
+  border-radius:0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow:var(--shadow-lg);
+  padding:14px 4vw 22px;
+  opacity:0;visibility:hidden;transform:translateY(-10px);pointer-events:none;
+  /* visibility is delay-swapped rather than transitioned: it flips to
+     visible immediately on open so focus can be moved into the drawer in
+     the same interaction, and only flips back to hidden after the fade
+     out. Transitioning it instead leaves it computing as hidden for the
+     first frames, and a visibility:hidden element cannot take focus. */
+  transition:opacity .24s ease,transform .24s cubic-bezier(.2,.65,.2,1),visibility 0s .24s;
+}
+.nav.menu-open .nav-drawer{
+  opacity:1;visibility:visible;transform:none;pointer-events:auto;
+  transition:opacity .24s ease,transform .24s cubic-bezier(.2,.65,.2,1),visibility 0s 0s;
+}
+
+.nav-scrim[hidden]{display:none}
+.nav-scrim{
+  position:fixed;inset:0;z-index:55;
+  background:rgba(19,37,26,.42);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .24s ease,visibility .24s;
+}
+.nav-scrim.is-open{opacity:1;visibility:visible;pointer-events:auto}
+body.menu-lock{overflow:hidden}
+
+.md-list{display:flex;flex-direction:column}
+.md-link{
+  display:block;padding:13px 14px;border-radius:var(--radius);
+  font-family:var(--sans);font-size:16px;font-weight:500;letter-spacing:-.005em;
+  color:var(--ink);transition:background .18s,color .18s;
+}
+.md-link:hover{background:rgba(19,37,26,.06)}
+.md-link.active{background:var(--lime);color:var(--ink)}
+
+.md-group{display:flex;flex-direction:column}
+.md-row{display:flex;align-items:center;gap:6px}
+.md-row .md-link{flex:1 1 auto;min-width:0}
+.md-toggle{
+  flex:0 0 42px;width:42px;height:42px;display:grid;place-items:center;
+  background:transparent;border:none;border-radius:50%;color:var(--mute);
+  cursor:pointer;transition:background .18s,color .18s;
+}
+.md-toggle:hover{background:rgba(19,37,26,.06);color:var(--ink)}
+.md-toggle:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+.md-toggle .caret{transform:rotate(45deg) translate(-2px,-2px)}
+.md-toggle[aria-expanded="true"] .caret{transform:rotate(-135deg) translate(-2px,-2px)}
+
+/* .md-sub sets display, which overrides the UA [hidden] rule at equal
+   specificity — without this the collapsed submenus stay on screen. */
+.md-sub[hidden]{display:none}
+.md-sub{
+  display:flex;flex-direction:column;gap:2px;
+  margin:2px 0 6px 14px;padding-left:14px;
+  border-left:1px solid var(--hair);
+}
+.md-sub a{
+  display:block;padding:10px 12px;border-radius:10px;
+  font-size:14.5px;font-weight:500;color:var(--mute);transition:background .18s,color .18s;
+}
+.md-sub a:hover{background:rgba(19,37,26,.06);color:var(--ink)}
+.md-sub a.on{background:var(--lime);color:var(--ink)}
+
+.md-foot{
+  margin-top:16px;padding-top:18px;border-top:1px solid var(--hair);
+  display:flex;flex-direction:column;gap:14px;
+}
+.md-foot .pill.md-quote{
+  width:100%;justify-content:center;padding-inline:7px;font-size:14.5px;
+}
+.md-wa{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 18px;border-radius:999px;
+  border:1.5px solid var(--hair-strong);color:var(--ink);
+  font-size:14px;font-weight:600;transition:background .2s,border-color .2s;
+}
+.md-wa:hover{background:rgba(19,37,26,.05);border-color:var(--ink)}
+.md-contact{
+  display:flex;flex-direction:column;gap:6px;padding-top:4px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+}
+.md-contact a{color:var(--mute);transition:color .18s}
+.md-contact a:hover{color:var(--ink)}
+
+@media (max-width:960px){
+  .nav-burger{display:inline-flex}
+  .nav-drawer{display:block}
+}
+/* The bar already carries the wordmark, WhatsApp and quote pill; adding a
+   third control crowds small phones, so the quote pill moves into the
+   drawer where it leads the footer. */
+@media (max-width:560px){
+  .nav-cta > .pill.magnet{display:none}
+}
+@media (max-width:480px){
+  .nav-burger{width:40px;height:40px;flex-basis:40px}
+  .nav-drawer{padding:12px 4vw 20px}
+}
+@media (max-width:360px){
+  .nav-burger{width:36px;height:36px;flex-basis:36px}
+  .burger-box{width:16px}
+}
