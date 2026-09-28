@@ -1337,3 +1337,9 @@ body.menu-lock{overflow:hidden}
   display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;
   color:var(--mute);margin-bottom:12px;
 }
+
+/* .sec-head is a flex row and the note had no shrink floor, so a long
+   heading squeezed it until its own words broke — "LATEST FROM" fell
+   onto two lines. The note is short by design; let the heading wrap
+   instead. */
+.sec-head .note{flex:0 0 auto}
