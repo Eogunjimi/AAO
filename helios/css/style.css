@@ -1325,3 +1325,7 @@ body.menu-lock{overflow:hidden}
    while the rest sat on two, and hyphenated "long-term". A slightly
    wider measure evens the row without reaching the step's own edge. */
 .proc-step p{max-width:23ch}
+
+/* Emphasis inside an answer needs to lift off the muted body tone,
+   otherwise bold at --paper-mute reads as noise rather than emphasis. */
+.faq-a strong{color:var(--paper);font-weight:600}
