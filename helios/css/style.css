@@ -1228,11 +1228,12 @@ body.menu-lock{overflow:hidden}
   .nav-burger{display:inline-flex}
   .nav-drawer{display:block}
 }
-/* The bar already carries the wordmark, WhatsApp and quote pill; adding a
-   third control crowds small phones, so the quote pill moves into the
-   drawer where it leads the footer. */
-@media (max-width:560px){
-  .nav-cta > .pill.magnet{display:none}
+/* Mobile bar is wordmark | Get A Quote | burger. WhatsApp leaves the bar
+   entirely and becomes a floating button, which frees the room the quote
+   pill needs and gives the chat action a permanent, thumb-reachable spot
+   instead of one that scrolls away with the header. */
+@media (max-width:960px){
+  .nav-cta > .nav-wa{display:none}
 }
 @media (max-width:480px){
   .nav-burger{width:40px;height:40px;flex-basis:40px}
@@ -1241,4 +1242,38 @@ body.menu-lock{overflow:hidden}
 @media (max-width:360px){
   .nav-burger{width:36px;height:36px;flex-basis:36px}
   .burger-box{width:16px}
+}
+
+
+/* ---- floating WhatsApp ----
+   Lives outside <header> on purpose: .nav carries backdrop-filter, which
+   makes it the containing block for fixed descendants, so a fixed button
+   inside it would anchor to the nav rather than the viewport.
+
+   Solid fill rather than the nav button's transparent hairline, which
+   would be unreadable floating over arbitrary page content. It follows
+   the primary icon-button pattern already used by the quick-quote
+   submit: lime disc, ink glyph.
+
+   z-index sits below the menu scrim so an open menu correctly dims it. */
+.wa-float{
+  display:none;
+  position:fixed;right:4vw;bottom:calc(20px + env(safe-area-inset-bottom,0px));
+  z-index:50;
+  width:56px;height:56px;align-items:center;justify-content:center;
+  border-radius:50%;background:var(--lime);color:var(--ink);
+  box-shadow:0 14px 34px rgba(19,37,26,.30);
+  transition:background .22s,transform .22s,box-shadow .22s;
+}
+.wa-float:hover{background:var(--lime-2);transform:translateY(-2px);box-shadow:0 18px 40px rgba(19,37,26,.36)}
+.wa-float:active{transform:translateY(0)}
+.wa-float:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wa-float svg{display:block}
+
+@media (max-width:960px){
+  .wa-float{display:inline-flex}
+}
+@media (max-width:480px){
+  .wa-float{width:52px;height:52px;bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .wa-float svg{width:24px;height:24px}
 }
