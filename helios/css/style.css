@@ -1021,3 +1021,7 @@ h1 em,h2 em,h3 em,h4 em,.display em,.statement em,.quick-quote h3 em{
    full-contrast ink, and the label spells the source out in words. */
 .hero--dark .badge-dark .stars,
 .rev-card .stars{color:var(--gold)}
+
+/* This eyebrow supplies its own leading glyph, so suppress the shared
+   lime dot rather than showing two markers side by side. */
+.hero--dark .hero-copy .eyebrow::before{display:none}
