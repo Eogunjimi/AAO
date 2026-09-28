@@ -1077,3 +1077,12 @@ h1 em,h2 em,h3 em,h4 em,.display em,.statement em,.quick-quote h3 em{
 .rev-card .who .who-txt > span{color:var(--mute)}
 
 @media (max-width:760px){.rev-body{max-height:200px}}
+
+/* The quote form's submit is full-width. It was centred with text-align,
+   which worked when .pill was inline-block but became inert once the
+   redesign made .pill a flex container — the label and arrow badge have
+   been hugging the left edge since. Flex items centre with
+   justify-content. The inline padding is also equalised, because the
+   pill's asymmetric 22px/7px padding is meant for a hug-content button
+   and would otherwise push the centred group 7.5px off true. */
+.form-card .pill{justify-content:center;padding-inline:7px}
