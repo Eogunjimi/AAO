@@ -1343,3 +1343,16 @@ body.menu-lock{overflow:hidden}
    onto two lines. The note is short by design; let the heading wrap
    instead. */
 .sec-head .note{flex:0 0 auto}
+
+/* .foot-quote was pinned to display:inline-block, written before .pill
+   became a flex container. The arrow badge is a sized ::after, so with
+   inline-block it dropped onto its own line under the label and the
+   button rendered 73px tall in two rows. Restore the flex row and give
+   it the pill's own proportions. */
+.foot-cols a.pill.foot-quote{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:6px 6px 6px 18px;
+}
+.foot-cols a.pill.foot-quote::after{
+  width:30px;height:30px;flex:0 0 30px;font-size:13px;
+}
