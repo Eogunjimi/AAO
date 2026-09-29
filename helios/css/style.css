@@ -1343,3 +1343,19 @@ body.menu-lock{overflow:hidden}
    onto two lines. The note is short by design; let the heading wrap
    instead. */
 .sec-head .note{flex:0 0 auto}
+
+/* ---------- service areas dropdown ---------- */
+.nav-sub--areas{flex-direction:row;min-width:480px;gap:10px}
+.nav-sub--areas .nav-sub-col{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.nav-sub--areas .nav-sub-col + .nav-sub-col{border-left:1px solid var(--hair);padding-left:10px}
+.nav-sub--areas .nav-sub-col a{white-space:normal}
+.nav-sub-label{padding:8px 14px 4px;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.18em;color:var(--mute)}
+.md-sub-label{padding:8px 12px 0;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.18em;color:var(--mute)}
+/* location chip links on the service-areas hub page */
+.cities a{font-family:var(--mono);font-size:10px;letter-spacing:.14em;border:1px solid var(--hair-strong);border-radius:999px;padding:8px 14px;color:var(--ink);text-decoration:none;transition:border-color .2s,color .2s}
+.cities a:hover{border-color:var(--lime);color:var(--lime)}
+.cities a.hq{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+/* links inside value cards */
+.value p a{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.value p a:hover{color:var(--forest)}
+@media (max-width:1180px){.nav-sub--areas{min-width:430px}}
