@@ -314,6 +314,15 @@
         if (!valid) ok = false;
       });
       if (ok){
+        var g = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+        var msg = 'New quote request — Access Energy\n'
+          + 'Name: ' + g('qName') + '\n'
+          + 'Phone: ' + g('qPhone') + '\n'
+          + 'Email: ' + g('qEmail') + '\n'
+          + 'Location: ' + g('qCity') + '\n'
+          + 'Interested in: ' + g('qInterest')
+          + (g('qMsg') ? '\nMessage: ' + g('qMsg') : '');
+        window.open('https://wa.me/2349056977454?text=' + encodeURIComponent(msg), '_blank', 'noopener');
         form.style.display = 'none';
         $('#formSuccess').style.display = 'block';
       }
