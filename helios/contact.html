@@ -3,36 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CONTACT — HELIOS ENERGY | Book a free solar survey, FAQs & service areas</title>
-<meta name="description" content="Book a free drone survey, get a fixed quote in 24 hours. FAQs and service areas across Nigeria — Helios Energy, Lekki, Lagos.">
+<title>CONTACT — ACCESS ENERGY | Book a free solar survey, FAQs & service areas</title>
+<meta name="description" content="Book a free drone survey, get a fixed quote in 24 hours. FAQs and service areas across Nigeria — Access Energy, Lekki, Lagos.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div id="preloader"><span class="pre-logo">HELIOS ENERGY</span><span id="preCount">000</span></div>
+<div id="preloader"><span class="pre-logo">ACCESS ENERGY</span><span id="preCount">000</span></div>
 <div id="cDot"></div><div id="cRing"></div>
 <div id="progress"></div>
 
-<div class="utility">
-  <span>MON–SAT 08:00–18:00 <span class="u-dot">●</span> LEKKI, LAGOS</span>
-  <span class="u-right"><a href="tel:+2341000000">+234 (0) 100 0000</a> &nbsp;·&nbsp; <a href="mailto:hello@helios.energy">hello@helios.energy</a></span>
+<div class="utility" id="top">
+  <span>MON–SAT 08:00–18:00 <span class="u-dot">●</span> FESTAC, LAGOS</span>
+  <span class="u-right"><a href="tel:+2349056977454">(905) 697-7454</a> &nbsp;·&nbsp; <a href="mailto:accesssolarenergy@gmail.com">accesssolarenergy@gmail.com</a></span>
 </div>
 
 <header class="nav">
-  <a class="wordmark" href="index.html">HELIOS ENERGY<i>.</i></a>
-  <nav class="nav-links">
-    <a href="index.html">HOME</a>
-    <a href="systems.html">SYSTEMS</a>
-    <a href="projects.html">PROJECTS</a>
-    <a href="about.html">ABOUT</a>
-    <a href="advice.html">ADVICE</a>
-    <a href="contact.html" class="active">CONTACT</a>
+  <a class="wordmark" href="index.html">ACCESS ENERGY<i>.</i></a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <div class="nav-item">
+      <a href="about.html" class="nav-top" aria-haspopup="true" aria-expanded="false">About<span class="caret" aria-hidden="true"></span></a>
+      <div class="nav-sub">
+        <a href="advice.html">Advice</a>
+        <a href="systems.html">Systems</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="systems.html" class="nav-top" aria-haspopup="true" aria-expanded="false">Services<span class="caret" aria-hidden="true"></span></a>
+      <div class="nav-sub">
+        <a href="residential-solar-installation.html">Residential Solar Installation</a>
+        <a href="commercial-solar-installation.html">Commercial Solar Installation</a>
+        <a href="inverter-systems.html">Inverter Systems</a>
+        <a href="lithium-battery-storage.html">Lithium Battery Storage</a>
+        <a href="energy-consultation.html">Energy Consultations</a>
+      </div>
+    </div>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html" class="active">Contact Us</a>
   </nav>
   <div class="nav-cta">
-    <a class="nav-phone" href="tel:+2341000000">+234 (0) 100 0000</a>
-    <a class="pill magnet" href="#quote">GET A QUOTE</a>
+    <a class="nav-wa" href="https://wa.me/2349056977454?text=Hi%20Helios%20%E2%80%94%20I%27d%20like%20a%20quote%20for%20solar%20%2B%20storage." target="_blank" rel="noopener noreferrer" aria-label="Chat with Helios on WhatsApp"><svg class="wa-ico" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+    <a class="pill magnet" href="#quote">Get A Quote</a>
+    <button class="nav-burger" id="navBurger" type="button"
+            aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="burger-box" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+  <div class="nav-drawer" id="mobileMenu">
+    <nav class="md-list" aria-label="Mobile">
+      <a class="md-link" href="index.html">Home</a>
+    <div class="md-group">
+      <div class="md-row">
+        <a class="md-link" href="about.html">About</a>
+        <button class="md-toggle" type="button" aria-expanded="false"
+                aria-controls="mdAbout" aria-label="Show About submenu">
+          <span class="caret" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="md-sub" id="mdAbout" hidden>
+        <a href="advice.html">Advice</a>
+        <a href="systems.html">Systems</a>
+      </div>
+    </div>
+    <div class="md-group">
+      <div class="md-row">
+        <a class="md-link" href="systems.html">Services</a>
+        <button class="md-toggle" type="button" aria-expanded="false"
+                aria-controls="mdServices" aria-label="Show Services submenu">
+          <span class="caret" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="md-sub" id="mdServices" hidden>
+        <a href="residential-solar-installation.html">Residential Solar Installation</a>
+        <a href="commercial-solar-installation.html">Commercial Solar Installation</a>
+        <a href="inverter-systems.html">Inverter Systems</a>
+        <a href="lithium-battery-storage.html">Lithium Battery Storage</a>
+        <a href="energy-consultation.html">Energy Consultations</a>
+      </div>
+    </div>
+      <a class="md-link" href="projects.html">Projects</a>
+      <a class="md-link active" href="contact.html">Contact Us</a>
+    </nav>
+    <div class="md-foot">
+      <a class="pill md-quote" href="#quote">Get A Quote</a>
+      <a class="md-wa" href="https://wa.me/2349056977454?text=Hi%20Helios%20%E2%80%94%20I%27d%20like%20a%20quote%20for%20solar%20%2B%20storage." target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <div class="md-contact">
+        <a href="tel:+2349056977454">(905) 697-7454</a>
+        <a href="mailto:accesssolarenergy@gmail.com">accesssolarenergy@gmail.com</a>
+      </div>
+    </div>
   </div>
 </header>
+<div class="nav-scrim" id="navScrim"></div>
+<a class="wa-float" href="https://wa.me/2349056977454?text=Hi%20Helios%20%E2%80%94%20I%27d%20like%20a%20quote%20for%20solar%20%2B%20storage." target="_blank" rel="noopener noreferrer"
+   aria-label="Chat with Helios on WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
 
 <div class="grid-overlay" aria-hidden="true">
   <div class="col"><span class="num">1</span></div><div class="col"><span class="num">2</span></div>
@@ -47,7 +114,7 @@
 
   <section class="page-hero">
     <span class="crumb">( HOME <i>/</i> CONTACT )</span>
-    <h1>GET A QUOTE<span class="dot">.</span></h1>
+    <h1>Get a quote<span class="dot">.</span></h1>
     <p class="intro">A survey slot and a fixed quote within 24 hours. Free drone shade report, no obligation, no sales scripts.</p>
     <div class="ph-row">
       <span>RESPONSE <b>&lt; 24H</b></span>
@@ -59,20 +126,20 @@
   <!-- QUOTE -->
   <section class="quote-sec on-dark" id="quote" style="padding-top:10vh">
     <div class="left">
-      <span class="eyebrow" data-reveal>( TALK TO US )</span>
-      <h2 data-reveal>READY WHEN<br>YOU ARE.</h2>
+      <span class="eyebrow" data-reveal>TALK TO US</span>
+      <h2 data-reveal>Ready when <em>you are</em>.</h2>
       <p data-reveal>Call, write, or use the form. The person who answers has designed systems last week — not a call centre.</p>
-      <a class="q-phone" href="tel:+2341000000" data-reveal>+234 (0) 100 0000</a>
+      <a class="q-phone" href="tel:+2349056977454" data-reveal>(905) 697-7454</a>
       <div class="q-lines" data-reveal>
-        <span>HELLO@HELIOS.ENERGY</span>
+        <span>ACCESSSOLARENERGY@GMAIL.COM</span>
         <span>MON–SAT 08:00–18:00 WAT</span>
-        <span>14 ADMIRALTY WAY, LEKKI PHASE 1, LAGOS</span>
+        <span>56 CASCO STREET, AGBOJU, AMUWO, FESTAC, LAGOS, 102314</span>
       </div>
     </div>
     <div class="right" data-reveal>
       <div class="form-card">
         <form id="quoteForm" novalidate>
-          <h3>REQUEST A FREE QUOTE</h3>
+          <h3>Request a free quote</h3>
           <div class="f-grid">
             <div class="f-field"><label for="qName">FULL NAME *</label><input id="qName" name="name" type="text" required autocomplete="name"><span class="err">REQUIRED</span></div>
             <div class="f-field"><label for="qPhone">PHONE *</label><input id="qPhone" name="phone" type="tel" required autocomplete="tel"><span class="err">REQUIRED</span></div>
@@ -81,7 +148,7 @@
             <div class="f-field full"><label for="qInterest">I'M INTERESTED IN</label><select id="qInterest" name="interest"><option>Hybrid Solar + Storage</option><option>Roof-Integrated</option><option>Ground-Mount</option><option>Commercial &amp; Industrial</option><option>Not sure yet</option></select><span class="err"></span></div>
             <div class="f-field full"><label for="qMsg">ANYTHING ELSE?</label><textarea id="qMsg" name="message" rows="3"></textarea><span class="err"></span></div>
           </div>
-          <button class="pill magnet" type="submit">REQUEST MY QUOTE →</button>
+          <button class="pill magnet" type="submit">Request My Quote</button>
         </form>
         <div class="form-success" id="formSuccess">
           <div class="ok">✓</div>
@@ -94,26 +161,38 @@
 
   <!-- FAQ -->
   <section class="faq on-dark" data-acc>
-    <div class="head"><h2 data-reveal>FAQS FROM<br>NIGERIAN SOLAR CUSTOMERS.</h2></div>
+    <div class="head"><h2 data-reveal>FAQs from<br>Nigerian solar customers.</h2></div>
     <div class="faq-item">
-      <button class="faq-q">How long does an installation take?<span class="plus">+</span></button>
-      <div class="faq-a"><p>Most residential systems are two days on site: day one rails, panels and cabling; day two storage, inverter and commissioning. Scaffolding is gone before the weekend. C&I projects run to a phased programme agreed up front.</p></div>
+      <button class="faq-q">How does a solar energy system actually work?<span class="plus">+</span></button>
+      <div class="faq-a"><p>It's simpler than it sounds! Solar panels installed on your roof absorb sunlight and convert it into clean electricity. Your inverter then changes that electricity into the standard power your home or business uses for appliances. Any extra power produced during the day is stored safely in high-capacity lithium batteries so you have seamless, uninterrupted power through the night or during grid outages.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">What happens during a grid outage or at night?<span class="plus">+</span></button>
-      <div class="faq-a"><p>Hybrid systems switch to stored power in under 20 milliseconds — your TV won't blink. At night the battery carries the load; when it's empty and the grid is down, the generator input (if fitted) takes over automatically.</p></div>
+      <button class="faq-q">Can solar power my entire home or business?<span class="plus">+</span></button>
+      <div class="faq-a"><p>Yes, absolutely! Solar can easily run high-energy appliances like air conditioners, refrigerators, water pumps, televisions, and lighting. Because <strong>we design before we install</strong>, we carefully assess your property's specific load requirements first. This ensures your system is sized correctly to run everything you need reliably and safely.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">Do you offer financing?<span class="plus">+</span></button>
-      <div class="faq-a"><p>Yes — 0% finance up to 24 months on residential systems, and CAPEX or PPA structures for commercial projects. Most clients spread the system across the months it's already saving them money.</p></div>
+      <button class="faq-q">Do solar panels still work on rainy or cloudy days in Lagos?<span class="plus">+</span></button>
+      <div class="faq-a"><p>Yes, they do! Solar panels generate power from ambient daylight, not heat. While power generation may be slightly lower on heavy rainy days, your system will still absorb sunlight. Plus, our reliable lithium battery storage stores energy during sunny periods so your lights, fans, and essentials stay powered no matter the weather.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">What maintenance do panels need in harmattan?<span class="plus">+</span></button>
-      <div class="faq-a"><p>Dust costs yield, so we schedule a rinse-and-inspect plan through harmattan months — included free for the first two years on every system. Rain does the rest of the year's cleaning for free.</p></div>
+      <button class="faq-q">How long will my battery backup last at night or during an outage?<span class="plus">+</span></button>
+      <div class="faq-a"><p>Your backup time depends entirely on your system size, battery capacity, and the appliances you run. During our free consultation, we ask about your desired backup hours and custom-size a lithium battery storage system that comfortably covers your night-time or power-outage needs.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">What exactly does the warranty cover?<span class="plus">+</span></button>
-      <div class="faq-a"><p>Our 10-year workmanship warranty covers everything we did: mounting, cabling, commissioning, workmanship. Panels carry their own 25-year manufacturer performance warranties, which we register and manage on your behalf.</p></div>
+      <button class="faq-q">How long does the installation process take?<span class="plus">+</span></button>
+      <div class="faq-a"><p>Once we've completed your custom energy assessment and finalized your design, the physical installation typically takes <strong>1 to 2 days</strong>. Our team works neatly and efficiently to ensure zero disruption to your home or business routine.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I start with a smaller backup system and upgrade later?<span class="plus">+</span></button>
+      <div class="faq-a"><p>Yes, definitely! We build modular, future-proof systems. If you're working with a specific budget, you can start with a basic Inverter &amp; Lithium Battery setup to replace your generator during grid outages, and we can seamlessly add solar panels or additional batteries as your energy needs expand.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How much money can I really save on generator fuel?<span class="plus">+</span></button>
+      <div class="faq-a"><p>Most of our residential and business clients see a <strong>70% to 90% drop in fuel and generator maintenance costs</strong> within the first month. Instead of spending money every day on fuel that disappears, your investment goes into a long-lasting asset that pays for itself over time.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What kind of warranty and after-sales support do you offer?<span class="plus">+</span></button>
+      <div class="faq-a"><p>We believe in building long-term relationships, not just one-time sales. All our solar panels, smart inverters, and lithium batteries come with valid manufacturer warranties. More importantly, we provide <strong>100% professional installation</strong> and dedicated after-sales support whenever you need help, maintenance, or advice.</p></div>
     </div>
   </section>
 
@@ -131,17 +210,17 @@
         <line x1="200" y1="210" x2="150" y2="250" stroke="rgba(14,14,12,.2)"/>
         <line x1="200" y1="210" x2="262" y2="298" stroke="rgba(14,14,12,.2)"/>
         <line x1="200" y1="210" x2="262" y2="222" stroke="rgba(14,14,12,.2)"/>
-        <circle cx="190" cy="80" r="4" fill="#0E0E0C"/><text x="200" y="78">KANO</text>
-        <circle cx="210" cy="150" r="4" fill="#0E0E0C"/><text x="220" y="148">ABUJA</text>
-        <circle cx="150" cy="250" r="4" fill="#0E0E0C"/><text x="96" y="266">IBADAN</text>
-        <circle cx="262" cy="298" r="4" fill="#0E0E0C"/><text x="272" y="302">PORT HARCOURT</text>
-        <circle cx="262" cy="222" r="4" fill="#0E0E0C"/><text x="272" y="220">ENUGU</text>
-        <rect x="195" y="282" width="10" height="10" fill="#FF5C00"/><text x="212" y="292" style="fill:#0E0E0C">LAGOS — HQ</text>
+        <circle cx="190" cy="80" r="4" fill="#4F6154"/><text x="200" y="78">KANO</text>
+        <circle cx="210" cy="150" r="4" fill="#4F6154"/><text x="220" y="148">ABUJA</text>
+        <circle cx="150" cy="250" r="4" fill="#4F6154"/><text x="96" y="266">IBADAN</text>
+        <circle cx="262" cy="298" r="4" fill="#4F6154"/><text x="272" y="302">PORT HARCOURT</text>
+        <circle cx="262" cy="222" r="4" fill="#4F6154"/><text x="272" y="220">ENUGU</text>
+        <rect x="195" y="282" width="10" height="10" fill="#A6E060" stroke="#13251A" stroke-width="1.5"/><text x="212" y="292" style="fill:#13251A">LAGOS — HQ</text>
       </svg>
     </div>
     <div class="txt">
-      <span class="eyebrow" data-reveal>( COVERAGE )</span>
-      <h2 data-reveal>LOCAL CREWS, NATIONWIDE REACH.</h2>
+      <span class="eyebrow" data-reveal>COVERAGE</span>
+      <h2 data-reveal>Local crews, nationwide reach.</h2>
       <p data-reveal>Headquartered in Lekki with regional crews in five more cities. If your roof is anywhere on this map, we're already nearby — and if it isn't, ask anyway.</p>
       <div class="cities" data-reveal>
         <span class="hq">LAGOS — HQ</span><span>LEKKI</span><span>IKOYI</span><span>VICTORIA ISLAND</span><span>IKEJA</span><span>AJAH</span><span>EPE</span><span>ABUJA</span><span>PORT HARCOURT</span><span>IBADAN</span><span>KANO</span><span>ENUGU</span><span>UYO</span><span>ASABA</span>
@@ -150,39 +229,63 @@
   </section>
 
   <section class="cta">
-    <h2 data-reveal>SUN'S OUT.<br>SAVE ON.</h2>
-    <a class="pill magnet" href="#quote" data-reveal>BOOK A SURVEY</a>
+    <h2 data-reveal>Sun's out.<br>Save on.</h2>
+    <a class="pill magnet" href="#quote" data-reveal>Book A Survey</a>
     <p class="fine" data-reveal>SURVEYS ARE FREE — INSTALL SLOTS THIS MONTH: 7 — RESPONSE WITHIN 24H</p>
   </section>
 
 </main>
 
 <footer>
-  <div class="giant" aria-hidden="true">HELIOS</div>
+  <div class="foot-glow" aria-hidden="true"></div>
+  <div class="giant" aria-hidden="true">ACCESS</div>
   <div class="foot-cols">
-    <div>
-      <a class="wordmark" href="index.html" style="color:var(--paper)">HELIOS ENERGY<i>.</i></a>
-      <p class="blurb">Premium solar + storage, engineered properly. Three generations of builders, 4,800 systems and counting.</p>
+    <div class="foot-brand">
+      <a class="wordmark" href="index.html" style="color:var(--paper)">ACCESS ENERGY<i>.</i></a>
+      <p class="blurb">Clean, reliable solar + battery backup, thoughtfully engineered for you. From a passion for renewable energy to a growing family of satisfied homes and businesses — powered with care, and counting.</p>
+      <div class="foot-clock">LAGOS <span id="lagosTime">--:--:--</span> WAT</div>
     </div>
     <div>
-      <h5>MENU</h5>
-      <a href="index.html">Home</a><a href="systems.html">Systems</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="advice.html">Advice</a><a href="contact.html">Contact</a>
+      <h5>Menu</h5>
+      <a href="index.html">Home</a><a href="systems.html">Services</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="advice.html">Advice</a><a href="contact.html">Contact</a>
     </div>
     <div>
-      <h5>SYSTEMS</h5>
-      <a href="systems.html#hybrid">Hybrid + Storage</a><a href="systems.html#roof">Roof-Integrated</a><a href="systems.html#ground">Ground-Mount</a><a href="systems.html#ci">Commercial &amp; Industrial</a>
+      <h5>Services</h5>
+      <a href="residential-solar-installation.html">Residential Solar Installation</a><a href="commercial-solar-installation.html">Commercial Solar Installation</a><a href="inverter-systems.html">Inverter Systems</a><a href="lithium-battery-storage.html">Lithium Battery Storage</a><a href="energy-consultation.html">Energy Consultations</a>
     </div>
     <div>
-      <h5>CONTACT</h5>
-      <a href="mailto:hello@helios.energy">hello@helios.energy</a>
-      <a href="tel:+2341000000">+234 (0) 100 0000</a>
-      <a href="contact.html">14 Admiralty Way, Lekki Phase 1, Lagos</a>
+      <h5>Social</h5>
+      <a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">YouTube</a><a href="#">X</a>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <a href="mailto:accesssolarenergy@gmail.com">accesssolarenergy@gmail.com</a>
+      <a href="tel:+2349056977454">(905) 697-7454</a>
+      <a href="contact.html">56 Casco Street, Agboju, Amuwo, Festac, Lagos, 102314</a>
+      <p class="foot-line">Mon&ndash;Sat, 08:00&ndash;18:00</p>
+      <div class="foot-connect">
+        <h5>Connect with us now</h5>
+        <a class="pill orange foot-quote magnet" href="contact.html#quote">Get A Free Quote</a>
+      </div>
     </div>
   </div>
   <div class="foot-base">
-    <span>© 2026 HELIOS ENERGY LTD</span>
-    <span>LAGOS — <span id="lagosTime">--:--:--</span> WAT</span>
-    <a href="#top">BACK TO TOP ↑</a>
+    <div class="fb-legal">
+      <span class="foot-c" aria-hidden="true">C</span>
+      <div>
+        <p class="foot-legal">Unauthorized reproduction or use of our original content is prohibited. ACCESS ENERGY is a registered trading name of Access Energy Limited, Lagos, Nigeria. All system designs, yield models and survey data remain our intellectual property.</p>
+        <div class="foot-policy">
+          <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a><a href="#">Warranty Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="fb-right">
+      <div class="foot-meta">
+        <span>&copy; 2026 ACCESS ENERGY LTD</span>
+        <a href="#top">BACK TO TOP &uarr;</a>
+      </div>
+      <div class="foot-year" aria-hidden="true">2026</div>
+    </div>
   </div>
 </footer>
 

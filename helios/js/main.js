@@ -181,7 +181,30 @@
     $('#revNext').addEventListener('click', function(){ idx = Math.min(maxIdx(), idx + 1); layout(); });
     addEventListener('resize', function(){ buildDots(); layout(); });
     buildDots(); layout();
-    setInterval(function(){ idx = idx >= maxIdx() ? 0 : idx + 1; layout(); }, 6000);
+    /* Autoplay pauses while the reader is in the carousel. The review
+       bodies scroll, so sliding the track out from under someone who is
+       part-way through one would be hostile. Also honours reduced-motion
+       and stops entirely when the tab is hidden. */
+    var timer = null;
+    var reduce = matchMedia('(prefers-reduced-motion:reduce)');
+    var section = revTrack.closest ? revTrack.closest('.reviews') : null;
+    function play(){
+      if (timer || reduce.matches || document.hidden) return;
+      timer = setInterval(function(){ idx = idx >= maxIdx() ? 0 : idx + 1; layout(); }, 6000);
+    }
+    function pause(){ if (timer){ clearInterval(timer); timer = null; } }
+    if (section){
+      ['mouseenter','focusin','touchstart'].forEach(function(ev){
+        section.addEventListener(ev, pause, {passive:true});
+      });
+      ['mouseleave','focusout'].forEach(function(ev){
+        section.addEventListener(ev, play);
+      });
+    }
+    document.addEventListener('visibilitychange', function(){
+      document.hidden ? pause() : play();
+    });
+    play();
   }
 
   /* ---------- accordions (services + faq) ---------- */
@@ -203,7 +226,15 @@
         if (!isOpen){
           item.classList.add('open');
           body.style.maxHeight = body.scrollHeight + 'px';
-          if (stageImgs[n]) stageImgs[n].classList.add('on');
+          if (stageImgs[n]){
+            stageImgs[n].classList.add('on');
+            /* The caption sits inside the image, so it has to follow the
+               image. It was static, which meant every service showed the
+               same specification line. */
+            var cap = stage.querySelector('.cap');
+            var text = stageImgs[n].getAttribute('data-cap');
+            if (cap && text) cap.textContent = text;
+          }
         }
       });
     });
@@ -287,5 +318,91 @@
         $('#formSuccess').style.display = 'block';
       }
     });
+  }
+
+  /* ---------- mobile menu ----------
+     The drawer is shown/hidden with a class rather than the hidden
+     attribute so it can transition. Because it uses visibility:hidden
+     when closed, its links are unfocusable and no inert polyfill is
+     needed. Focus is moved into the drawer on open, trapped while it is
+     open, and handed back to the burger on close. */
+  var burger = $('#navBurger'), drawer = $('#mobileMenu'),
+      scrim  = $('#navScrim'),  navBar = document.querySelector('.nav');
+
+  if (burger && drawer && navBar){
+    var FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+    function drawerFocusables(){
+      return Array.prototype.slice.call(drawer.querySelectorAll(FOCUSABLE))
+        .filter(function(el){ return el.offsetParent !== null; });
+    }
+    function menuOpen(){ return navBar.classList.contains('menu-open'); }
+
+    function setMenu(open, returnFocus){
+      navBar.classList.toggle('menu-open', open);
+      if (scrim) scrim.classList.toggle('is-open', open);
+      document.body.classList.toggle('menu-lock', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (open){
+        /* The drawer's own height cap cannot be expressed in CSS: it sits
+           below a utility bar that may or may not be scrolled away, so the
+           space beneath it is only known at open time. */
+        drawer.style.maxHeight =
+          Math.max(240, window.innerHeight - drawer.getBoundingClientRect().top - 12) + 'px';
+        /* visibility has not flipped to visible in the same frame the class
+           is added, and a visibility:hidden element cannot take focus, so
+           move focus on the next frame. */
+        requestAnimationFrame(function(){
+          var first = drawerFocusables()[0];
+          if (first) first.focus();
+        });
+      } else if (returnFocus){
+        burger.focus();
+      }
+    }
+
+    burger.addEventListener('click', function(){ setMenu(!menuOpen(), true); });
+    if (scrim) scrim.addEventListener('click', function(){ setMenu(false, true); });
+
+    /* Submenu accordions inside the drawer. */
+    $$('.md-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var panel = document.getElementById(btn.getAttribute('aria-controls'));
+        if (!panel) return;
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+        if (isOpen) panel.setAttribute('hidden', ''); else panel.removeAttribute('hidden');
+      });
+    });
+
+    /* Following a link closes the menu — matters for same-page anchors,
+       where no navigation happens to close it for us. */
+    $$('#mobileMenu a').forEach(function(a){
+      a.addEventListener('click', function(){ setMenu(false, false); });
+    });
+
+    document.addEventListener('keydown', function(e){
+      if (!menuOpen()) return;
+      if (e.key === 'Escape'){ e.preventDefault(); setMenu(false, true); return; }
+      if (e.key !== 'Tab') return;
+      var items = drawerFocusables();
+      if (!items.length) return;
+      var first = items[0], last = items[items.length - 1];
+      /* Keep Tab inside the drawer, including the burger itself so the
+         close control stays reachable. */
+      if (e.shiftKey && (document.activeElement === first || document.activeElement === burger)){
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last){
+        e.preventDefault(); burger.focus();
+      }
+    });
+
+    /* Crossing back to the desktop layout must not leave the page
+       scroll-locked behind an invisible drawer. */
+    var mq = window.matchMedia('(min-width:961px)');
+    var onWide = function(e){ if (e.matches && menuOpen()) setMenu(false, false); };
+    if (mq.addEventListener) mq.addEventListener('change', onWide);
+    else if (mq.addListener) mq.addListener(onWide);
   }
 })();
