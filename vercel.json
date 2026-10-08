@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/helios/index.html" },
+    { "source": "/:path*", "destination": "/helios/:path*" }
+  ]
+}
