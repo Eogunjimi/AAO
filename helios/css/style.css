@@ -1462,6 +1462,8 @@ body:not(.service-page) .sp-heading h2{line-height:1.02;letter-spacing:-.022em}
 .service-page .sp-hero .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--lime);font-size:10px;letter-spacing:.16em}
 .service-page .sp-hero .eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
 .service-page .sp-hero h1{font-size:clamp(3.25rem,5.75vw,6.5rem);line-height:.92;max-width:1080px;text-wrap:balance;margin:18px 0 24px;text-shadow:0 4px 30px rgba(0,0,0,.15)}
+/* Location pages: use the same hero title font style (line-height/letter-spacing) as the homepage hero, instead of the tighter display tracking used on the bespoke service pages */
+.service-page.location-page .sp-hero h1{line-height:1.02;letter-spacing:-.022em}
 .service-page .sp-hero-copy>p{max-width:720px;font-size:clamp(16px,1.5vw,21px);line-height:1.55;color:rgba(255,255,255,.85)}
 .service-page .sp-hero-actions{display:flex;align-items:center;gap:22px;margin-top:30px}
 .service-page .sp-hero-actions .pill{background:var(--lime);color:var(--ink)}
