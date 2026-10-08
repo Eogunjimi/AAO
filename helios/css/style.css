@@ -1639,3 +1639,17 @@ body:not(.service-page) .sp-heading h2{line-height:1.02;letter-spacing:-.022em}
 .values--panels .v-body{padding:22px;display:flex;flex-direction:column;flex:1}
 .values--panels .v-body h3{margin:0 0 8px}
 @media (max-width:560px){.values--panels .card-img{height:180px}}
+
+/* =====================================================================
+   5. HOMEPAGE ALL-CAPS SECTION TITLES
+   Every section title on the homepage (hero H1 + all section H2s)
+   renders in capital letters. Scoped to body.home so other pages keep
+   the sentence-case titles of the original design. Caps glyphs run
+   wider than mixed case, so tracking relaxes from -.022em to -.01em,
+   and the hero H1 rebreaks to four lines (the masked reveal supports
+   four) at a slightly reduced clamp so no line ever wraps.
+   ===================================================================== */
+.home h1,.home h2{text-transform:uppercase}
+.home h2,.home .head h2{letter-spacing:-.01em}
+.home .hero--dark .display{letter-spacing:-.012em;font-size:clamp(2.5rem,5.1vw,4.6rem)}
+@media (max-width:1100px){.home .hero--dark .display{font-size:clamp(1.8rem,4.2vw,2.6rem)}}

@@ -1,6 +1,6 @@
 # Access Solar Energy — Homepage: Titles & Subtitles, Section by Section
 
-Extracted from `helios/index.html`, in page order. Titles are listed in ALL CAPS as a listing convention only — under the restored original design system, the site renders them in sentence case as authored. *Italicized* words render in the lime accent style on the live site.
+Extracted from `helios/index.html`, in page order. On the homepage every section title (hero H1 + all H2s) renders in ALL CAPS via the homepage caps layer; other pages render titles in sentence case as authored. *Italicized* words render in the lime serif-italic accent style on the live site.
 
 ---
 
