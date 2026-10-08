@@ -1567,3 +1567,75 @@ body:not(.service-page) .sp-heading h2{line-height:1.02;letter-spacing:-.022em}
   .service-page header.nav > .nav-links{display:none!important}
   .service-page header.nav .nav-burger{display:grid!important}
 }
+
+/* =====================================================================
+   SESSION ADDITIONS — content support on the restored original system
+   (original ACCESS ENERGY stylesheet restored 2026-10-08)
+   1. Mobile header sizing for the Access logo lockup (wordmark, quote
+      pill, burger) so brand + CTA always fit small screens together.
+   2. Homepage hero two-part subtitle: .hero-lead carries the pain
+      question (brightened, semibold); .hero-body beneath is the
+      sentence-case benefit paragraph with soft-white strongs.
+   3. Panel-type cards (.values--panels): photo bleeds to the card's
+      top edge, copy sits in a padded body, hover scales the photo.
+   4. Logo lockup: the Access logo image + wordmark share the .wordmark
+      anchor (originally text-only); the footer carries .foot-logo.
+   ===================================================================== */
+/* ---- logo lockup ---- */
+.wordmark{display:flex;align-items:center;gap:9px}
+.wordmark .brand-mark{display:block;height:34px;width:auto}
+.foot-logo{display:inline-block;line-height:0}
+.foot-logo img{display:block;height:84px;width:auto}
+
+/* ---- mobile bar balance: logo lockup | quote pill | burger ----
+   One home for every mobile header size, so the three groups scale as a
+   set and always fit with breathing room: the emblem lockup and the CTA
+   shrink together, and leftover width lands between them (nav-cta keeps
+   margin-left:auto, so the logo hugs the left edge and the actions hug
+   the right). Supersedes the older compact rules above by source order. */
+@media (max-width:600px){
+  .nav{gap:14px}
+  .nav-cta{gap:10px}
+  .wordmark{font-size:15px;gap:8px}
+  .wordmark .brand-mark{height:29px}
+  .nav-cta .pill{font-size:11.5px;padding:0 5px 0 13px;height:40px;gap:7px}
+  .nav-cta .pill::after{width:24px;height:24px;flex:0 0 24px;font-size:11px}
+  .nav-burger{width:40px;height:40px;flex-basis:40px}
+}
+@media (max-width:480px){
+  .nav{gap:10px}
+  .nav-cta{gap:8px}
+  .wordmark{font-size:13px;gap:7px}
+  .wordmark .brand-mark{height:26px}
+  .nav-cta .pill{font-size:11px;padding:0 5px 0 12px;height:38px;gap:6px}
+  .nav-cta .pill::after{width:22px;height:22px;flex:0 0 22px;font-size:10.5px}
+  .nav-burger{width:38px;height:38px;flex-basis:38px}
+}
+@media (max-width:360px){
+  .wordmark{font-size:12.5px;gap:6px}
+  .wordmark .brand-mark{height:25px}
+  .nav-cta .pill{font-size:10.5px;padding:0 4px 0 11px;height:36px;gap:5px}
+  .nav-cta .pill::after{width:21px;height:21px;flex:0 0 21px;font-size:10px}
+  .nav-burger{width:36px;height:36px;flex-basis:36px}
+}
+/* Very narrow phones (<=330px): the full lockup cannot stay legible next
+   to the CTA, so the bar carries the emblem alone. The name still reads
+   in the menu drawer and the footer. */
+@media (max-width:330px){
+  .wordmark{gap:0}
+  .wordmark > span{display:none}
+  .wordmark .brand-mark{height:30px}
+}
+
+/* ---- hero: two-part subtitle ---- */
+.hero--dark .hero-lead{color:var(--paper-soft);font-weight:600}
+.hero--dark .hero-body{margin-top:12px;color:var(--paper-mute);font-size:15.5px;line-height:1.65;max-width:52ch}
+.hero--dark .hero-body strong{color:var(--paper-soft);font-weight:600}
+
+/* ---- panel-type cards ---- */
+.values--panels .value{padding:0;overflow:hidden}
+.values--panels .card-img{display:block;width:100%;height:150px;object-fit:cover;border-bottom:1.5px solid var(--hair);transition:transform .5s cubic-bezier(.2,.65,.15,1)}
+.values--panels .value:hover .card-img{transform:scale(1.04)}
+.values--panels .v-body{padding:22px;display:flex;flex-direction:column;flex:1}
+.values--panels .v-body h3{margin:0 0 8px}
+@media (max-width:560px){.values--panels .card-img{height:180px}}

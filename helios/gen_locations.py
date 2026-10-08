@@ -111,7 +111,7 @@ HEADER_TMPL = """<body class="service-page"><svg class="svg-sprite" aria-hidden=
 """
 
 BODY_TMPL = """<main>
-<section class="sp-hero" style="--hero:url('@HERO_IMG@')"><div class="sp-hero-shade"></div><div class="sp-hero-copy"><span class="eyebrow">ACCESS SOLAR ENERGY \u00b7 @LOCATION_UPPER@, @REGION_LABEL@</span><h1 class="upper">Solar and Inverter Installation in @LOCATION@ That Stands the Test of Time</h1><p>One Home or Business at a Time, Powering @LOCATION@ with Clean, Reliable Energy</p><div class="sp-hero-actions"><a class="pill" href="#service-form">Get A Free Assessment</a><a class="sp-call" href="tel:+2349056977454">Call (905) 697-7454</a></div><div class="sp-hero-bottom"><div class="hero-badges-dark" data-reveal>
+<section class="sp-hero" style="--hero:url('@HERO_IMG@')"><div class="sp-hero-shade"></div><div class="sp-hero-copy"><span class="eyebrow">ACCESS SOLAR ENERGY \u00b7 @LOCATION_UPPER@, @REGION_LABEL@</span><h1 class="upper">Solar &amp; Inverter Installation in @LOCATION@</h1><p>One Home or Business at a Time, Powering @LOCATION@ with Clean, Reliable Energy</p><div class="sp-hero-actions"><a class="pill" href="#service-form">Get A Free Assessment</a><a class="sp-call" href="tel:+2349056977454">Call (905) 697-7454</a></div><div class="sp-hero-bottom"><div class="hero-badges-dark" data-reveal>
           <div class="badge-dark">
             <span class="ico"><svg class="gmark" aria-hidden="true" focusable="false"><use href="#ico-google"/></svg></span>
             <span><b>4.9 <span class="stars">\u2605\u2605\u2605\u2605\u2605</span></b><br>Based on 118 Reviews</span>
