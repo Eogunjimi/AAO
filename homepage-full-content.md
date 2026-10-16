@@ -15,7 +15,7 @@ Complete copy inventory of `helios/index.html`, in page order. *Italic* = lime-a
 ---
 
 # 1. HERO (dark)
-- **Eyebrow:** ⚡ BEST SOLAR PANEL INSTALLATION IN LAGOS, NIGERIA
+- **Eyebrow:** ⚡ BEST SOLAR &amp; INVERTER INSTALLATION IN LAGOS, NIGERIA
 - **Title (H1):** Custom Solar & Inverter Systems for Homes & Businesses.
 - **Subtitle (lead):** Tired of high fuel costs and unreliable NEPA power?
 - **Subtitle (body):** We **design and install** solar panels, inverters, and lithium batteries **tailored to your exact energy needs**—so you can **stop wasting money on generators** and enjoy **24/7 reliable electricity**.
